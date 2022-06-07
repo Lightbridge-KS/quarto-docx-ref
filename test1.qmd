@@ -28,3 +28,25 @@ You can add options to executable code like this
 ```
 
 The `echo: false` option disables the printing of code (only output is displayed).
+
+# Unordered List
+
+## Wide
+
+-   Item 1 
+
+-   Item 2
+
+## Narrow
+
+-   Item 1 
+-   Item 2
+
+# Ordered List
+
+1. One
+2. Two
+
+1. One Wide
+
+2. Two Wide
