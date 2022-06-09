@@ -22,7 +22,7 @@ jobs:
         # Repository Secrets
         API_TOKEN_GITHUB: ${{ secrets.COPY_FILES_ACROSS_REPO }}
       with:
-        source_file: "ref/th-sarabun-new-ref.docx"
+        source_file: "ref/" # Copy everything in (but not) `ref/`
         destination_repo: 'Lightbridge-KS/quarto-docx-ref'
         destination_branch: output
         destination_folder: 
