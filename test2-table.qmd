@@ -1,0 +1,92 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+format:
+  docx:
+    reference-doc: ref/th-sarabun-new-ref-tbl.docx
+bibliography: "ref/references.bib"
+link-citations: true
+---
+
+## Grid Table
+
+### All
+
++---------------+---------------+----------------------+
+| Fruit         | Price         | Advantages           |
++===============+===============+======================+
+| Bananas       | \$1.34        | -   built-in wrapper |
+|               |               | -   bright color     |
++---------------+---------------+----------------------+
+| Oranges       | \$2.10        | -   cures scurvy     |
+|               |               | -   tasty            |
++---------------+---------------+----------------------+
+
+: Sample grid table.
+
+### One Colomn (left allign)
+
++------------------+
+| Centered         |
++:=================+
+| built-in wrapper |
++------------------+
+
+## Variable
+
+```{r}
+library(gt)
+```
+
+```{r}
+text_1a <- "
+### This is Markdown.
+
+Markdown's syntax is comprised entirely of
+punctuation characters, which punctuation
+characters have been carefully chosen so as
+to look like what they mean... assuming
+you've ever used email.
+
+
+"
+
+text_1b <- "
+Info on Markdown syntax can be found
+[here](https://daringfireball.net/projects/markdown/).
+"
+```
+
+### With GT
+
+```{r}
+dplyr::tribble(
+  ~Markdown,
+  text_1a,  
+  text_1b,  
+) |>
+  gt() |>
+  fmt_markdown(columns = everything()) |>
+  tab_options(table.width = px(400))
+```
+
+### Pipe table
+
+| Fruit   |
+|---------|
+| Bananas |
+| Oranges |
+
+### Grid Table
+
++----------------------------------------------------------------------+
+| Centered                                                             |
++:=====================================================================+
+| ## Hello                                                             |
+|                                                                      |
+| **Bold**, Regular, *Italic*                                          |
+|                                                                      |
+| [@marrero2019]                                                       |
++----------------------------------------------------------------------+
+| ![](img/icon.png){width="264"}                                       |
++----------------------------------------------------------------------+
